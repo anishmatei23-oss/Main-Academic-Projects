@@ -1,0 +1,57 @@
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.contact-card {
+    background-color: #f5f5f5;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border-left: 5px solid #3f51b5;
+}
+
+.contact-card h3 {
+    margin: 0;
+    color: #333;
+}
+
+.contact-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.contact-card strong {
+    color: #333;
+}
+
+.go-back-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.go-back-button a {
+    text-decoration: none;
+}
+
+.go-back-button button {
+    padding: 10px 20px;
+    background-color: #3f51b5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.go-back-button button:hover {
+    background-color: #2c3e50;
+}

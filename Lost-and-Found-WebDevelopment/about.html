@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Lost and Found</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(120deg, #84fab0, #8fd3f4);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        header nav a:hover {
+            color: #2ecc71;
+        }
+
+        .container {
+            max-width: 1200px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            animation: slideIn 1s ease;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .container h1 {
+            font-size: 2.5em;
+            font-weight: 600;
+            color: #2ecc71;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature-box {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #f4f4f4;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-box h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #2ecc71;
+        }
+
+        .feature-box p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+            background: #2ecc71;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+        }
+
+        .back-btn:hover {
+            background: #27ae60;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.6);
+        }
+
+        /* Animation */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+            }
+
+            .feature-box {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+    </header>
+
+    <div class="container">
+        <h1>Welcome to Lost and Found</h1>
+        <p>
+            Our platform is dedicated to reuniting people with their lost belongings and ensuring that found items
+            can quickly be returned to their rightful owners. With an intuitive interface, our website allows you to
+            report lost or found items, browse listings, and connect with others to solve these problems effectively.
+        </p>
+
+        <div class="features">
+            <div class="feature-box">
+                <h3>Report Lost Items</h3>
+                <p>Easily submit details of lost items, helping others identify and return them to you promptly.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Register Found Items</h3>
+                <p>Log details of items you've found to help their rightful owners locate them quickly.</p>
+            </div>
+            <div class="feature-box">
+                <h3>User-Friendly Dashboard</h3>
+                <p>Access a clean, easy-to-navigate dashboard for managing your lost or found items seamlessly.</p>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <a href="home.html" class="back-btn">Back to Home</a>
+    </div>
+</body>
+</html>

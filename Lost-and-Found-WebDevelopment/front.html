@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found</title>
+    <link rel="stylesheet" href="frontcss.css">
+</head>
+<body>
+    <header>
+        <button class="back-home" id="backHomeButton">🏠 Home</button>
+        <h1>Lost and Found</h1>
+        <p>Helping you reunite with your belongings</p>
+    </header>
+    <main>
+        <section class="selection-section">
+            <h2>Report Lost or Found Item</h2>
+            <p>Choose an option to proceed:</p>
+            <div>
+                <button id="reportLost" class="btn">I Lost Something</button>
+                <button id="reportFound" class="btn">I Found Something</button>
+            </div>
+        </section>
+
+        <!-- Lost Section -->
+        <section class="lost-section" id="lostSection" style="display: none;">
+            <h2>Lost Something?</h2>
+            <p>If you have lost an item, please provide the details below.</p>
+            <form action="submit_item.php" method="POST">
+                <input type="hidden" name="type" value="lost">
+                <label for="lost-item">Item Description:</label>
+                <input type="text" id="lost-item" name="lost-item" required>
+                
+                <label for="lost-location">Location Lost:</label>
+                <input type="text" id="lost-location" name="lost-location" required>
+                
+                <label for="lost-date">Date Lost:</label>
+                <input type="date" id="lost-date" name="lost-date" required>
+                
+                <label for="ref-email">Contact Reference Email:</label>
+                <input type="email" id="ref_email" name="ref_email">
+                
+                <button type="submit">Submit Lost Item</button>
+            </form>
+        </section>
+
+        <!-- Found Section -->
+        <section class="found-section" id="foundSection" style="display: none;">
+            <h2>Found Something?</h2>
+            <p>If you have found an item, please provide the details below.</p>
+            <form action="submit_item.php" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="type" value="found">
+                <label for="found-item">Item Description:</label>
+                <input type="text" id="found-item" name="found-item" required>
+                
+                <label for="found-location">Location Found:</label>
+                <input type="text" id="found-location" name="found-location" required>
+                
+                <label for="found-date">Date Found:</label>
+                <input type="date" id="found-date" name="found-date" required>
+                
+                <label for="ref_email">Contact Reference Email:</label>
+                <input type="email" id="ref_email" name="ref_email">
+
+                <input type="file" name="found-image" accept="image/*">
+
+                <button type="submit">Submit Found Item</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Lost and Found. All rights reserved.</p>
+    </footer>
+    <script>
+        // Show Lost Section
+        document.getElementById("reportLost").addEventListener("click", () => {
+            document.getElementById("lostSection").style.display = "block";
+            document.getElementById("foundSection").style.display = "none";
+        });
+
+        // Show Found Section
+        document.getElementById("reportFound").addEventListener("click", () => {
+            document.getElementById("foundSection").style.display = "block";
+            document.getElementById("lostSection").style.display = "none";
+        });
+
+        // Transition Back to Home
+        document.getElementById("backHomeButton").addEventListener("click", () => {
+            document.body.style.opacity = "0";
+            document.body.style.transition = "opacity 0.8s";
+            setTimeout(() => {
+                window.location.href = "home.html";
+            }, 800);
+        });
+    </script>
+</body>
+</html>
