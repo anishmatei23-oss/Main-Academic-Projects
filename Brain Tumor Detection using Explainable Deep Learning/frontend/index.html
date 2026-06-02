@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroVision AI | Brain Tumor Classification</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="neural-loader">
+                <div class="neuron"></div>
+                <div class="neuron"></div>
+                <div class="neuron"></div>
+                <div class="neuron"></div>
+                <div class="connections"></div>
+            </div>
+            <h2 class="loading-text">Initializing NeuroVision AI</h2>
+            <div class="loading-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-brain"></i>
+                    <div class="pulse-ring"></div>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-main">NeuroVision</span>
+                    <span class="logo-sub">AI Diagnostics</span>
+                </div>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home" class="nav-link active" data-text="Home">Home</a></li>
+                    <li class="nav-item"><a href="#models" class="nav-link" data-text="Models">Models</a></li>
+                    <li class="nav-item"><a href="#classify" class="nav-link" data-text="Classify">Classify</a></li>
+                    <li class="nav-item"><a href="#xai" class="nav-link" data-text="XAI">XAI</a></li>
+                    <li class="nav-item"><a href="#dashboard" class="nav-link" data-text="Dashboard">Dashboard</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link" data-text="About">About</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle" id="menuToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">AI-Powered Medical Diagnostics</div>
+                <h1 class="hero-title">
+                    <span class="title-line">Automated</span>
+                    <span class="title-line highlight">Brain Tumor</span>
+                    <span class="title-line">Classification</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Leveraging state-of-the-art deep learning architectures for precise identification of Glioma, Meningioma, and Pituitary tumors with clinical transparency through Explainable AI.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-value" data-count="96.3">0</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" data-count="4">0</div>
+                        <div class="stat-label">Models</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" data-count="3">0</div>
+                        <div class="stat-label">Tumor Types</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" data-count="0.8">0</div>
+                        <div class="stat-label">Seconds</div>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#classify" class="btn btn-primary">
+                        <i class="fas fa-play-circle"></i>
+                        Start Analysis
+                    </a>
+                    <a href="#models" class="btn btn-outline">
+                        <i class="fas fa-code-branch"></i>
+                        View Models
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="brain-container">
+                    <div class="brain-model">
+                        <div class="brain-lobe front"></div>
+                        <div class="brain-lobe parietal"></div>
+                        <div class="brain-lobe temporal"></div>
+                        <div class="brain-lobe occipital"></div>
+                        <div class="tumor-spot glioma"></div>
+                        <div class="tumor-spot meningioma"></div>
+                        <div class="tumor-spot pituitary"></div>
+                        <div class="neural-connections">
+                            <div class="connection"></div>
+                            <div class="connection"></div>
+                            <div class="connection"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Models Section -->
+    <section class="section models-section" id="models">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Deep Learning Architecture Ensemble</h2>
+                <p class="section-subtitle">Multiple convolutional and transformer-based models trained and evaluated for multi-class tumor recognition</p>
+            </div>
+            
+            <div class="models-grid">
+                <!-- Xception Card -->
+                <div class="model-card">
+                    <div class="model-card-header">
+                        <div class="model-icon xception">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="model-title">Xception</div>
+                        <div class="model-badge">CNN</div>
+                    </div>
+                    <div class="model-card-body">
+                        <p class="model-description">Extreme version of Inception with depthwise separable convolutions for efficient feature extraction.</p>
+                        <div class="model-stats">
+                            <div class="model-stat">
+                                <div class="stat-name">Accuracy</div>
+                                <div class="stat-value">94.2%</div>
+                            </div>
+                            <div class="model-stat">
+                                <div class="stat-name">Parameters</div>
+                                <div class="stat-value">22.9M</div>
+                            </div>
+                            <div class="model-stat">
+                                <div class="stat-name">F1-Score</div>
+                                <div class="stat-value">0.937</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-card-footer">
+                        <div class="tech-tags">
+                            <span class="tech-tag">Depthwise Conv</span>
+                            <span class="tech-tag">Separable Filters</span>
+                            <span class="tech-tag">Residual</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Inception Card -->
+                <div class="model-card">
+                    <div class="model-card-header">
+                        <div class="model-icon inception">
+                            <i class="fas fa-th-large"></i>
+                        </div>
+                        <div class="model-title">Inception v3</div>
+                        <div class="model-badge">CNN</div>
+                    </div>
+                    <div class="model-card-body">
+                        <p class="model-description">Multi-scale convolutional blocks to capture features at different granularities simultaneously.</p>
+                        <div class="model-stats">
+                            <div class="model-stat">
+                                <div class="stat-name">Accuracy</div>
+                                <div class="stat-value">92.8%</div>
+                            </div>
+                            <div class="model-stat">
+                                <div class="stat-name">Parameters</div>
+                                <div class="stat-value">23.8M</div>
+                            </div>
+                            <div class="model-stat">
+                                <div class="stat-name">F1-Score</div>
+                                <div class="stat-value">0.925</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-card-footer">
+                        <div class="tech-tags">
+                            <span class="tech-tag">Multi-scale</span>
+                            <span class="tech-tag">Factorization</span>
+                            <span class="tech-tag">Auxiliary</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ResNet Card -->
+                <div class="model-card">
+                    <div class="model-card-header">
+                        <div class="model-icon resnet">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="model-title">ResNet-50</div>
+                        <div class="model-badge">CNN</div>
+                    </div>
+                    <div class="model-card-body">
+                        <p class="model-description">Deep residual network with skip connections to address vanishing gradient problem.</p>
+                        <div class="model-stats">
+                            <div class="model-stat">
+                                <div class="stat-name">Accuracy</div>
+                                <div class="stat-value">95.1%</div>
+                            </div>
+                            <div class="model-stat">
+                                <div class="stat-name">Parameters</div>
+                                <div class="stat-value">25.6M</div>
+                            </div>
+                            <div class="model-stat">
+                                <div class="stat-name">F1-Score</div>
+                                <div class="stat-value">0.949</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-card-footer">
+                        <div class="tech-tags">
+                            <span class="tech-tag">Skip Connections</span>
+                            <span class="tech-tag">Bottleneck</span>
+                            <span class="tech-tag">Identity Mapping</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ViT Card -->
+                <div class="model-card">
+                    <div class="model-card-header">
+                        <div class="model-icon vit">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                        </div>
+                        <div class="model-title">Vision Transformer</div>
+                        <div class="model-badge">Transformer</div>
+                    </div>
+                    <div class="model-card-body">
+                        <p class="model-description">Transformer-based architecture applying self-attention mechanisms to image patches.</p>
+                        <div class="model-stats">
+                            <div class="model-stat">
+                                <div class="stat-name">Accuracy</div>
+                                <div class="stat-value">96.3%</div>
+                            </div>
+                            <div class="model-stat">
+                                <div class="stat-name">Parameters</div>
+                                <div class="stat-value">86M</div>
+                            </div>
+                            <div class="model-stat">
+                                <div class="stat-name">F1-Score</div>
+                                <div class="stat-value">0.961</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="model-card-footer">
+                        <div class="tech-tags">
+                            <span class="tech-tag">Self-Attention</span>
+                            <span class="tech-tag">Patches</span>
+                            <span class="tech-tag">Positional Encoding</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Model Performance Chart -->
+            <div class="performance-container">
+                <div class="performance-header">
+                    <h3>Model Performance Comparison</h3>
+                    <div class="performance-toggle">
+                        <button class="toggle-btn active" data-metric="accuracy">Accuracy</button>
+                        <button class="toggle-btn" data-metric="f1">F1-Score</button>
+                        <button class="toggle-btn" data-metric="precision">Precision</button>
+                    </div>
+                </div>
+                <div class="performance-chart">
+                    <div class="chart-bars">
+                        <div class="chart-bar" data-model="xception" data-value="94.2">
+                            <div class="bar-fill xception"></div>
+                            <div class="bar-label">Xception</div>
+                        </div>
+                        <div class="chart-bar" data-model="inception" data-value="92.8">
+                            <div class="bar-fill inception"></div>
+                            <div class="bar-label">Inception</div>
+                        </div>
+                        <div class="chart-bar" data-model="resnet" data-value="95.1">
+                            <div class="bar-fill resnet"></div>
+                            <div class="bar-label">ResNet-50</div>
+                        </div>
+                        <div class="chart-bar" data-model="vit" data-value="96.3">
+                            <div class="bar-fill vit"></div>
+                            <div class="bar-label">ViT</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classification Section -->
+    <section class="section classification-section" id="classify">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">MRI Scan Classification</h2>
+                <p class="section-subtitle">Upload brain MRI scans for automated tumor subtype identification</p>
+            </div>
+            
+            <div class="classification-container">
+                <div class="upload-zone">
+                    <div class="upload-card">
+                        <div class="upload-icon">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <div class="upload-pulse"></div>
+                        </div>
+                        <h3 class="upload-title">Upload MRI Scan</h3>
+                        <p class="upload-subtitle">Drag & drop DICOM, JPG, or PNG files</p>
+                        
+                        <div class="upload-area" id="uploadArea">
+                            <input type="file" id="fileInput" class="file-input" accept=".jpg,.jpeg,.png,.dcm,.dicom">
+                            <label for="fileInput" class="upload-btn">
+                                <i class="fas fa-folder-open"></i>
+                                Browse Files
+                            </label>
+                        </div>
+                        
+                        <div class="upload-info">
+                            <div class="info-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Supports multi-slice MRI</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>HIPAA compliant processing</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-bolt"></i>
+                                <span>Real-time analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sample Scans -->
+                    <div class="sample-scans">
+                        <h4>Try Sample Scans</h4>
+                        <div class="sample-grid">
+                            <div class="sample-scan" data-sample="glioma">
+                                <div class="sample-preview glioma"></div>
+                                <div class="sample-label">Glioma</div>
+                            </div>
+                            <div class="sample-scan" data-sample="meningioma">
+                                <div class="sample-preview meningioma"></div>
+                                <div class="sample-label">Meningioma</div>
+                            </div>
+                            <div class="sample-scan" data-sample="pituitary">
+                                <div class="sample-preview pituitary"></div>
+                                <div class="sample-label">Pituitary</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Results Panel -->
+                <div class="results-panel" id="resultsPanel">
+                    <div class="panel-header">
+                        <h3>Analysis Results</h3>
+                        <div class="panel-status">
+                            <span class="status-indicator idle"></span>
+                            <span class="status-text">Ready</span>
+                        </div>
+                    </div>
+                    
+                    <!-- File Preview -->
+                    <div class="file-preview" id="filePreview">
+                        <div class="preview-placeholder">
+                            <i class="fas fa-brain"></i>
+                            <p>No scan selected</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Results Content -->
+                    <div class="results-content">
+                        <div class="tumor-predictions">
+                            <h4>Tumor Type Predictions</h4>
+                            <div class="predictions-list">
+                                <!-- Predictions will be inserted by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <!-- Updated Confidence Meter Section -->
+                        <div class="confidence-meter">
+                            <h4><i class="fas fa-chart-line"></i> Model Confidence</h4>
+                            <div class="meter-container">
+                                <div class="meter-wrapper">
+                                    <div class="meter-semicircle">
+                                        <div class="meter-gradient"></div>
+                                        <div class="meter-mask" id="confidenceMask"></div>
+                                        <div class="meter-scale">
+                                            <div class="meter-tick"></div>
+                                            <div class="meter-tick"></div>
+                                            <div class="meter-tick"></div>
+                                            <div class="meter-tick"></div>
+                                            <div class="meter-tick"></div>
+                                            <div class="meter-tick"></div>
+                                            <div class="meter-tick"></div>
+                                            <div class="meter-tick"></div>
+                                            <div class="meter-tick"></div>
+                                        </div>
+                                    </div>
+                                    <div class="meter-needle" id="confidenceNeedle"></div>
+                                    <div class="meter-value" id="confidenceValue">0</div>
+                                </div>
+                                <div class="meter-labels">
+                                    <span><i class="fas fa-exclamation-circle"></i> Low</span>
+                                    <span><i class="fas fa-info-circle"></i> Medium</span>
+                                    <span><i class="fas fa-check-circle"></i> High</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Confidence Level Indicators -->
+                            <div class="confidence-levels">
+                                <div class="level-indicator">
+                                    <div class="level-color low"></div>
+                                    <div class="level-text">Low Confidence (&lt;30%)</div>
+                                </div>
+                                <div class="level-indicator">
+                                    <div class="level-color medium"></div>
+                                    <div class="level-text">Medium Confidence (30-70%)</div>
+                                </div>
+                                <div class="level-indicator">
+                                    <div class="level-color high"></div>
+                                    <div class="level-text">High Confidence (&gt;70%)</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Test Confidence Levels Demo -->
+                            <div class="confidence-demo">
+                                <div class="demo-title">Test Confidence Levels:</div>
+                                <div class="demo-buttons">
+                                    <button class="demo-btn low">Low (30%)</button>
+                                    <button class="demo-btn medium">Medium (65%)</button>
+                                    <button class="demo-btn high">High (90%)</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="recommendation-card">
+                            <div class="rec-icon">
+                                <i class="fas fa-user-md"></i>
+                            </div>
+                            <div class="rec-content">
+                                <h5>Clinical Recommendation</h5>
+                                <p id="recommendationText">Upload an MRI scan to receive AI-powered diagnostic insights.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="analyze-btn" id="analyzeBtn">
+                        <i class="fas fa-play"></i>
+                        Start Analysis
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- XAI Section -->
+    <section class="section xai-section" id="xai">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explainable AI (XAI) Visualization</h2>
+                <p class="section-subtitle">Grad-CAM visualizations provide clinical transparency for model predictions</p>
+            </div>
+            
+            <div class="xai-container">
+                <div class="xai-visualization">
+                    <div class="xai-viewer">
+                        <div class="viewer-header">
+                            <h4>Grad-CAM Heatmap Overlay</h4>
+                            <div class="viewer-controls">
+                                <button class="control-btn" data-layer="conv"><i class="fas fa-layer-group"></i> Conv</button>
+                                <button class="control-btn active" data-layer="attention"><i class="fas fa-eye"></i> Attention</button>
+                                <button class="control-btn" data-layer="ensemble"><i class="fas fa-cogs"></i> Ensemble</button>
+                            </div>
+                        </div>
+                        <div class="viewer-content">
+                            <div class="mri-display">
+                                <div class="mri-base"></div>
+                                <div class="heatmap-overlay" id="heatmapOverlay"></div>
+                                <div class="focus-point" id="focusPoint"></div>
+                            </div>
+                            <div class="viewer-legend">
+                                <div class="legend-title">Attention Intensity</div>
+                                <div class="legend-gradient">
+                                    <span>Low</span>
+                                    <div class="gradient-bar"></div>
+                                    <span>High</span>
+                                </div>
+                                <div class="layer-indicators">
+                                    <div class="layer-indicator">
+                                        <div class="layer-color conv"></div>
+                                        <span>Conv Layer</span>
+                                    </div>
+                                    <div class="layer-indicator">
+                                        <div class="layer-color attention"></div>
+                                        <span>Attention</span>
+                                    </div>
+                                    <div class="layer-indicator">
+                                        <div class="layer-color ensemble"></div>
+                                        <span>Ensemble</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Model Attention Comparison -->
+                    <div class="attention-comparison">
+                        <h4>Model Attention Comparison</h4>
+                        <div class="comparison-grid">
+                            <div class="comparison-model">
+                                <div class="model-name">ViT</div>
+                                <div class="attention-visual vit-attention"></div>
+                            </div>
+                            <div class="comparison-model">
+                                <div class="model-name">ResNet-50</div>
+                                <div class="attention-visual resnet-attention"></div>
+                            </div>
+                            <div class="comparison-model">
+                                <div class="model-name">Xception</div>
+                                <div class="attention-visual xception-attention"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="xai-explanation">
+                    <div class="explanation-card">
+                        <div class="explanation-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>How Grad-CAM Works</h3>
+                        <p>Gradient-weighted Class Activation Mapping (Grad-CAM) uses gradients flowing into the final convolutional layer to produce a coarse localization map highlighting important regions for predictions.</p>
+                        
+                        <div class="explanation-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h5>Forward Pass</h5>
+                                    <p>MRI scan processed through CNN layers</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h5>Gradient Calculation</h5>
+                                    <p>Compute gradients of target class score</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h5>Weighted Combination</h5>
+                                    <p>Combine feature maps with gradient weights</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h5>Heatmap Generation</h5>
+                                    <p>Apply ReLU to highlight positive features</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="clinical-benefits">
+                            <h4>Clinical Benefits</h4>
+                            <ul>
+                                <li><i class="fas fa-check-circle"></i> Visual model interpretability</li>
+                                <li><i class="fas fa-check-circle"></i> Trust-building with clinicians</li>
+                                <li><i class="fas fa-check-circle"></i> Error analysis and debugging</li>
+                                <li><i class="fas fa-check-circle"></i> Regulatory compliance support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section class="section dashboard-section" id="dashboard">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Model Performance Dashboard</h2>
+                <p class="section-subtitle">Real-time insights and analytics for tumor classification models</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <!-- Confusion Matrix -->
+                <div class="dashboard-card wide">
+                    <div class="card-header">
+                        <h4>Confusion Matrix</h4>
+                        <select class="model-select" id="confusionModel">
+                            <option value="ensemble">Ensemble Model</option>
+                            <option value="vit">Vision Transformer</option>
+                            <option value="resnet">ResNet-50</option>
+                        </select>
+                    </div>
+                    <div class="confusion-matrix">
+                        <div class="matrix-labels">
+                            <div class="true-label">True Label</div>
+                            <div class="class-labels">
+                                <span class="class-label glioma">Glioma</span>
+                                <span class="class-label meningioma">Meningioma</span>
+                                <span class="class-label pituitary">Pituitary</span>
+                            </div>
+                        </div>
+                        <div class="matrix-grid">
+                            <!-- Matrix cells will be populated by JS -->
+                        </div>
+                        <div class="pred-label">Predicted Label</div>
+                    </div>
+                </div>
+                
+                <!-- Metrics Overview -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h4>Performance Metrics</h4>
+                        <div class="metric-trend up">+2.4%</div>
+                    </div>
+                    <div class="metrics-grid">
+                        <div class="metric-item">
+                            <div class="metric-value">96.3%</div>
+                            <div class="metric-name">Accuracy</div>
+                            <div class="metric-progress">
+                                <div class="progress-fill" style="width: 96.3%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">0.961</div>
+                            <div class="metric-name">F1-Score</div>
+                            <div class="metric-progress">
+                                <div class="progress-fill" style="width: 96.1%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">94.8%</div>
+                            <div class="metric-name">Precision</div>
+                            <div class="metric-progress">
+                                <div class="progress-fill" style="width: 94.8%"></div>
+                            </div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">95.7%</div>
+                            <div class="metric-name">Recall</div>
+                            <div class="metric-progress">
+                                <div class="progress-fill" style="width: 95.7%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Live Inference Stats -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h4>Live Inference</h4>
+                        <div class="live-indicator">
+                            <span class="pulse"></span>
+                            Live
+                        </div>
+                    </div>
+                    <div class="inference-stats">
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">0.8s</div>
+                                <div class="stat-label">Avg. Inference Time</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">1,247</div>
+                                <div class="stat-label">Scans Processed</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-value">98.2%</div>
+                                <div class="stat-label">Success Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="about">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-brain"></i>
+                        <div>
+                            <div class="footer-logo-text">NeuroVision AI</div>
+                            <div class="footer-tagline">Medical Imaging Intelligence</div>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Advanced deep learning system for automated brain tumor classification with clinical-grade accuracy and explainable AI.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-researchgate"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Project</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#models">Models</a></li>
+                        <li><a href="#classify">Classification</a></li>
+                        <li><a href="#xai">XAI</a></li>
+                        <li><a href="#dashboard">Dashboard</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Technology</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Deep Learning</a></li>
+                        <li><a href="#">Computer Vision</a></li>
+                        <li><a href="#">Medical Imaging</a></li>
+                        <li><a href="#">Explainable AI</a></li>
+                        <li><a href="#">TensorFlow/PyTorch</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-university"></i>
+                            <span>Minor Project - CS/IT Department</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Academic Year 2026-2027</span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2023 NeuroVision AI - Brain Tumor Classification System. For Academic Purposes.
+                </div>
+                <div class="footer-badges">
+                    <span class="badge">TensorFlow</span>
+                    <span class="badge">PyTorch</span>
+                    <span class="badge">Grad-CAM</span>
+                    <span class="badge">Medical AI</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
