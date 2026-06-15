@@ -1,5 +1,0 @@
-cd /c/Projects/game1
-ls -la
-
-# If game1.exe exists, run it with:
-./game1.exe
