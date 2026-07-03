@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Join Community — InAmigos Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="volunteer-form-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Join Our Community</h1>
+        <p>Connect with our network and stay informed</p>
+      </div>
+    </header>
+
+    <main class="container volunteer-form-section">
+      <div class="form-wrapper">
+        <form id="communityForm" class="volunteer-form">
+          <div class="form-group">
+            <label for="comm_name">Full Name *</label>
+            <input type="text" id="comm_name" name="name" placeholder="Enter your full name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="comm_email">Email Address *</label>
+            <input type="email" id="comm_email" name="email" placeholder="your.email@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="comm_location">City/State</label>
+            <input type="text" id="comm_location" name="location" placeholder="Enter your city and state" />
+          </div>
+
+          <div class="form-group">
+            <label for="comm_interest">Primary Interest Area</label>
+            <select id="comm_interest" name="interest">
+              <option value="">Select an area</option>
+              <option value="Education">Education & Literacy</option>
+              <option value="Community Development">Community Development</option>
+              <option value="Sustainability">Sustainability & Environment</option>
+              <option value="Digital Inclusion">Digital Inclusion</option>
+              <option value="Social Empowerment">Social Empowerment</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="comm_reason">Why do you want to join?</label>
+            <textarea id="comm_reason" name="reason" placeholder="Tell us what brought you here and what you hope to achieve..." rows="5"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">
+            <i class="fas fa-check-circle"></i> Join Community
+          </button>
+        </form>
+
+        <div id="communityStatus" class="form-status"></div>
+      </div>
+
+      <div class="volunteer-back">
+        <a href="volunteer-contact.html" class="btn btn-secondary outline">
+          <i class="fas fa-arrow-left"></i> Back
+        </a>
+      </div>
+    </main>
+    <script src="volunteer-forms.js"></script>
+  </body>
+</html>

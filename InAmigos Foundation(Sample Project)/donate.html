@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate | InAmigos Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="donate.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="page-overlay"></div>
+      <header class="donate-header">
+        <a href="index.html" class="brand-link">
+          <img src="https://inamigos-foundation-aniket.vercel.app/assets/logo.webp" alt="InAmigos Foundation Logo" class="brand-logo" />
+          <div>
+            <span class="brand-title">InAmigos Foundation</span>
+            <p class="brand-subtitle">Empowering communities with trust and transparency</p>
+          </div>
+        </a>
+        <nav class="donate-nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#projects">Projects</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </header>
+
+      <main class="donation-layout">
+        <section class="left-panel">
+          <div class="left-card">
+            <div class="brand-block">
+              <img src="https://inamigos-foundation-aniket.vercel.app/assets/logo.webp" alt="InAmigos Foundation Logo" />
+              <div>
+                <span class="brand-name">InAmigos Foundation</span>
+                <p class="brand-line">Creating lasting change through education, sustainability, digital inclusion and community development.</p>
+              </div>
+            </div>
+
+            <h1>Thank You For Supporting Change</h1>
+            <p class="intro-copy">Your support empowers InAmigos Foundation to reach students, families, and communities with trusted programs in education, environmental sustainability, digital inclusion, and volunteer-led social impact.</p>
+
+            <div class="trust-section">
+              <h2>Trusted Nonprofit Impact</h2>
+              <div class="trust-cards">
+                <article class="trust-card"><i class="fas fa-shield-check"></i><div><strong>NGO Registered Organization</strong><span>Certified trust with verified governance.</span></div></article>
+                <article class="trust-card"><i class="fas fa-file-invoice-dollar"></i><div><strong>Transparent Financial Records</strong><span>Clear reporting for every donation and project.</span></div></article>
+                <article class="trust-card"><i class="fas fa-hands-helping"></i><div><strong>Community Impact Programs</strong><span>Education, health, green initiatives, and outreach.</span></div></article>
+                <article class="trust-card"><i class="fas fa-users"></i><div><strong>Volunteer-Driven Initiatives</strong><span>Local changemakers power every mission.</span></div></article>
+                <article class="trust-card"><i class="fas fa-leaf"></i><div><strong>Environmental Sustainability</strong><span>Eco-friendly projects that protect nature.</span></div></article>
+              </div>
+            </div>
+
+            <div class="impact-grid">
+              <div class="impact-stat"><strong data-target="50000">0</strong><span>Lives Impacted</span></div>
+              <div class="impact-stat"><strong data-target="30000">0</strong><span>Interns Trained</span></div>
+              <div class="impact-stat"><strong data-target="20000">0</strong><span>Saplings Planted</span></div>
+              <div class="impact-stat"><strong data-target="500">0</strong><span>Community Events</span></div>
+            </div>
+
+            <div class="contact-block">
+              <h2>Contact Information</h2>
+              <div class="contact-item"><i class="fas fa-envelope"></i><div><span>Email</span><a href="mailto:support@inamigosfoundation.org.in">support@inamigosfoundation.org.in</a></div></div>
+              <div class="contact-item"><i class="fas fa-phone-alt"></i><div><span>Phone</span><a href="tel:+916267309902">+91 626 730 9902</a></div></div>
+              <div class="contact-item"><i class="fas fa-globe"></i><div><span>Website</span><a href="https://inamigosfoundation.org.in/" target="_blank" rel="noreferrer">inamigosfoundation.org.in</a></div></div>
+            </div>
+
+            <div class="badges-row">
+              <div class="badge"><i class="fas fa-lock"></i><span>Secure Donation</span></div>
+              <div class="badge"><i class="fas fa-certificate"></i><span>Verified NGO</span></div>
+              <div class="badge"><i class="fas fa-heart"></i><span>Community Impact</span></div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="right-panel">
+          <div class="form-card">
+            <div class="form-header">
+              <span class="label-pill">Make a Donation</span>
+              <h2>Support Hope, Education & Sustainability</h2>
+              <p>Choose the amount that inspires you, then share your details to help us deliver real change across India.</p>
+            </div>
+
+            <form id="donationForm" class="donation-form">
+              <div class="section-title">
+                <h3>Donation Amount</h3>
+                <p>Select a gift amount or enter your own.</p>
+              </div>
+
+              <div class="amount-grid">
+                <button type="button" class="amount-option active" data-value="100">₹100</button>
+                <button type="button" class="amount-option" data-value="500">₹500</button>
+                <button type="button" class="amount-option" data-value="1000">₹1000</button>
+                <button type="button" class="amount-option" data-value="2500">₹2500</button>
+                <label class="custom-amount">
+                  <span>Custom</span>
+                  <input id="customAmount" type="number" min="10" placeholder="₹ Custom" />
+                </label>
+              </div>
+
+              <div class="fieldset-group">
+                <label class="field"><span>Full Name</span><input type="text" id="donorName" name="donorName" placeholder="Your full name" required /></label>
+                <label class="field"><span>Email Address</span><input type="email" id="donorEmail" name="donorEmail" placeholder="you@example.com" required /></label>
+                <label class="field"><span>Phone Number</span><input type="tel" id="donorPhone" name="donorPhone" placeholder="+91 98765 43210" required /></label>
+                <label class="field field-message"><span>Message (Optional)</span><textarea id="donorMessage" name="donorMessage" rows="4" placeholder="Tell us what inspires you..."></textarea></label>
+              </div>
+
+              <div class="section-title">
+                <h3>Payment Options</h3>
+              </div>
+              <div class="payment-grid">
+                <label class="payment-option"><input type="radio" name="paymentMethod" value="UPI" checked /><span><i class="fas fa-qrcode"></i>UPI</span></label>
+                <label class="payment-option"><input type="radio" name="paymentMethod" value="Credit Card" /><span><i class="fas fa-credit-card"></i>Credit Card</span></label>
+                <label class="payment-option"><input type="radio" name="paymentMethod" value="Debit Card" /><span><i class="fas fa-credit-card"></i>Debit Card</span></label>
+                <label class="payment-option"><input type="radio" name="paymentMethod" value="Net Banking" /><span><i class="fas fa-university"></i>Net Banking</span></label>
+              </div>
+
+              <div class="summary-card">
+                <div>
+                  <span>Donation Summary</span>
+                  <strong id="summaryAmount">₹100</strong>
+                </div>
+                <small id="summaryMethod">Payment via UPI</small>
+              </div>
+
+              <button type="submit" class="primary-button">Donate Now</button>
+              <div class="success-panel" id="successPanel" aria-live="polite"></div>
+            </form>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>File a Complaint — InAmigos Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="volunteer-form-hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Report an Issue</h1>
+        <p>We're committed to maintaining a safe and respectful environment</p>
+      </div>
+    </header>
+
+    <main class="container volunteer-form-section">
+      <div class="form-wrapper">
+        <form id="complaintForm" class="volunteer-form">
+          <div class="form-group">
+            <label for="comp_name">Your Name *</label>
+            <input type="text" id="comp_name" name="name" placeholder="Enter your full name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="comp_email">Your Email *</label>
+            <input type="email" id="comp_email" name="email" placeholder="your.email@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="comp_category">Issue Category *</label>
+            <select id="comp_category" name="category" required>
+              <option value="">Select a category</option>
+              <option value="Volunteer Conduct">Volunteer Conduct</option>
+              <option value="Safety Concern">Safety Concern</option>
+              <option value="Harassment">Harassment or Discrimination</option>
+              <option value="Policy Violation">Policy Violation</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="comp_date">When did this occur?</label>
+            <input type="date" id="comp_date" name="date" />
+          </div>
+
+          <div class="form-group">
+            <label for="comp_location">Location (if applicable)</label>
+            <input type="text" id="comp_location" name="location" placeholder="Where did this occur?" />
+          </div>
+
+          <div class="form-group">
+            <label for="comp_details">Detailed Description *</label>
+            <textarea id="comp_details" name="details" placeholder="Please provide detailed information about the incident..." rows="6" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="comp_evidence">Additional Information</label>
+            <textarea id="comp_evidence" name="evidence" placeholder="Any additional details, witness information, or supporting documents..." rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">
+            <i class="fas fa-send"></i> Submit Complaint
+          </button>
+        </form>
+
+        <div id="complaintStatus" class="form-status"></div>
+      </div>
+
+      <div class="volunteer-back">
+        <a href="volunteer-contact.html" class="btn btn-secondary outline">
+          <i class="fas fa-arrow-left"></i> Back
+        </a>
+      </div>
+    </main>
+    <script src="volunteer-forms.js"></script>
+  </body>
+</html>
